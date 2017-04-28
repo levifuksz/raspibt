@@ -1,0 +1,13 @@
+[Unit]
+Description=Raspberry PI Bluetooth Server
+After=bluetooth.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/home/pi/raspibtsrv
+ExecStart=/home/pi/raspibtsrv/raspibtsrv.py -l /home/pi/raspibtsrv/raspibtsrv.log
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,5 @@
+android-app/packages/*
+android-app/RasPiBtControl/RasPiBtControl.Android/bin/*
+android-app/RasPiBtControl/RasPiBtControl.Android/obj/*
+android-app/RasPiBtControl/RasPiBtControl/bin/*
+android-app/RasPiBtControl/RasPiBtControl/obj/*

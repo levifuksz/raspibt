@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RasPiBtControl.UI.LandingPage"
+             Title="LandingPage"
+             x:Name="landingPage">
+  <ScrollView>
+    <StackLayout Padding="10">
+        <StackLayout Orientation="Horizontal">
+            <Picker ItemsSource="{Binding PairedDevices}" SelectedItem="{Binding SelectedDevice, Mode=TwoWay}" Title="Select Device" HorizontalOptions="StartAndExpand" />
+            <Button Image="refresh" Command="{Binding Refresh}" HorizontalOptions="End"/>
+        </StackLayout>
+        
+        <ListView ItemsSource="{Binding Operations}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>                        
+                        <Button Grid.Column="1" Text="{Binding}" Command="{Binding BindingContext.Execute, Source={x:Reference Name=landingPage}}" CommandParameter="{Binding}" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <Label Text="{Binding Message}" VerticalOptions="EndAndExpand" />
+    </StackLayout>
+  </ScrollView>
+</ContentPage>
